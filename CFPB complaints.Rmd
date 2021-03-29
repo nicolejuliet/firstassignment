@@ -30,7 +30,15 @@ companies <- complaints %>%
     numberofcomplaints = "n"
   )
 
+#make new data table to count the states with the most complaints
 
+states <- complaints %>%
+  count(state) %>%
+  arrange(desc(n)) %>%
+  select(
+    state,
+    numberofcomplaints = "n"
+  )
  
 
 
@@ -61,7 +69,7 @@ datatable(companies,
 
 ```
 
-Complaints About Covid
+States With the Most Complaints
 =====================================
 To filter, click on the boxes at the top of the columns. To sort, use the up/down arrows by the column names.
 
@@ -70,11 +78,20 @@ Row {data-height=1000}
 
 ```{r}
 
+datatable(states,
+          rownames = FALSE,
+          filter = "top",
+          extensions = 'Buttons', 
+          options = list(searchHighlight = TRUE, bPaginate = FALSE, dom = 'Bfrtip',
+       buttons = c('copy','print')
+          )) %>% 
+      formatStyle(c("state", "numberofcomplaints"), fontWeight = 'bold') %>% 
+      formatStyle(c("numberofcomplaints"), color = "darkgreen") 
 
 
 ```
 
-States With the Most Complaints
+Complaints About Covid
 =====================================
 To filter, click on the boxes at the top of the columns. To sort, use the up/down arrows by the column names.
 
