@@ -10,22 +10,34 @@ output:
 ```{r setup, include=FALSE}
 library(flexdashboard)
 library(tidyverse)
+library(lubridate)
+library(janitor)
+library(glue)
+library(plotly)
+library(DT)
+library(kableExtra)
+library(htmlwidgets)
+library(htmltools)
+library(readxl)
 ```
 
-Column {data-width=650}
+Companies With the Most Complaints
+=====================================
+To filter, click on the boxes at the top of the columns. To sort, use the up/down arrows by the column names.
+
+Row {data-height=1000}
 -----------------------------------------------------------------------
-
-### Chart A
-
 ```{r}
 
 
 ```
 
-Column {data-width=350}
------------------------------------------------------------------------
+Complaints About Covid
+=====================================
+To filter, click on the boxes at the top of the columns. To sort, use the up/down arrows by the column names.
 
-### Chart B
+Row {data-height=1000}
+-----------------------------------------------------------------------
 
 ```{r}
 
@@ -33,7 +45,12 @@ Column {data-width=350}
 
 ```
 
-### Chart C
+States With the Most Complaints
+=====================================
+To filter, click on the boxes at the top of the columns. To sort, use the up/down arrows by the column names.
+
+Row {data-height=1000}
+-----------------------------------------------------------------------
 
 ```{r}
 
