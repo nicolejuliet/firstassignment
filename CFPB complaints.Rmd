@@ -40,7 +40,15 @@ states <- complaints %>%
     numberofcomplaints = "n"
   )
  
+#make new data table to show the most common issues complained about
 
+issues <- complaints %>%
+  count(issue) %>%
+  arrange(desc(n)) %>%
+  select(
+    issue,
+    numberofcomplaints = "n"
+  )
 
 
 
@@ -91,7 +99,7 @@ datatable(states,
 
 ```
 
-Complaints About Covid
+Most Common Issues Complained About
 =====================================
 To filter, click on the boxes at the top of the columns. To sort, use the up/down arrows by the column names.
 
@@ -99,6 +107,18 @@ Row {data-height=1000}
 -----------------------------------------------------------------------
 
 ```{r}
+
+datatable(issues,
+          rownames = FALSE,
+          filter = "top",
+          extensions = 'Buttons', 
+          options = list(searchHighlight = TRUE, bPaginate = FALSE, dom = 'Bfrtip',
+       buttons = c('copy','print')
+          )) %>% 
+      formatStyle(c("issue", "numberofcomplaints"), fontWeight = 'bold') %>% 
+      formatStyle(c("numberofcomplaints"), color = "darkgreen") 
+
+
 
 ```
 
