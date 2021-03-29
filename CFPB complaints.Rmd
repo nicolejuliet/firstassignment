@@ -70,7 +70,7 @@ datatable(companies,
        buttons = c('copy','print')
           )) %>% 
       formatStyle(c("company", "numberofcomplaints"), fontWeight = 'bold') %>% 
-      formatStyle(c("numberofcomplaints"), color = "darkgreen") 
+      formatStyle(c("numberofcomplaints"), color = "darkblue") 
 
 
 
@@ -94,7 +94,7 @@ datatable(states,
        buttons = c('copy','print')
           )) %>% 
       formatStyle(c("state", "numberofcomplaints"), fontWeight = 'bold') %>% 
-      formatStyle(c("numberofcomplaints"), color = "darkgreen") 
+      formatStyle(c("numberofcomplaints"), color = "darkblue") 
 
 
 ```
@@ -116,7 +116,7 @@ datatable(issues,
        buttons = c('copy','print')
           )) %>% 
       formatStyle(c("issue", "numberofcomplaints"), fontWeight = 'bold') %>% 
-      formatStyle(c("numberofcomplaints"), color = "darkgreen") 
+      formatStyle(c("numberofcomplaints"), color = "darkblue") 
 
 
 
