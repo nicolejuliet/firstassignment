@@ -19,6 +19,23 @@ library(kableExtra)
 library(htmlwidgets)
 library(htmltools)
 library(readxl)
+
+#make new data table to count the companies with most complaints
+
+companies <- complaints %>%
+  count(company) %>%
+  arrange(desc(n)) %>%
+  select(
+    company, 
+    numberofcomplaints = "n"
+  )
+
+
+ 
+
+
+
+
 ```
 
 Companies With the Most Complaints
@@ -28,6 +45,18 @@ To filter, click on the boxes at the top of the columns. To sort, use the up/dow
 Row {data-height=1000}
 -----------------------------------------------------------------------
 ```{r}
+
+datatable(companies,
+          rownames = FALSE,
+          filter = "top",
+          extensions = 'Buttons', 
+          options = list(searchHighlight = TRUE, bPaginate = FALSE, dom = 'Bfrtip',
+       buttons = c('copy','print')
+          )) %>% 
+      formatStyle(c("company", "numberofcomplaints"), fontWeight = 'bold') %>% 
+      formatStyle(c("numberofcomplaints"), color = "darkgreen") 
+
+
 
 
 ```
