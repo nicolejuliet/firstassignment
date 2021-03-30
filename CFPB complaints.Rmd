@@ -2,7 +2,7 @@
 title: "CFPB Complaints"
 output: 
   flexdashboard::flex_dashboard:
-    orientation: columns
+    orientation: rows
     vertical_layout: fill
     theme: cerulean
 ---
@@ -32,7 +32,6 @@ companies <- complaints %>%
   )
 
 #make new data table to count the states with the most complaints
-
 states <- complaints %>%
   count(state) %>%
   arrange(desc(n)) %>%
@@ -42,7 +41,6 @@ states <- complaints %>%
   )
  
 #make new data table to show the most common issues complained about
-
 issues <- complaints %>%
   count(issue) %>%
   arrange(desc(n)) %>%
@@ -52,15 +50,15 @@ issues <- complaints %>%
   )
 
 
-
 ```
+
 
 Companies With the Most Complaints
 =====================================
-To filter, click on the boxes at the top of the columns. To sort, use the up/down arrows by the column names.
 
 Row {data-height=1000}
 -----------------------------------------------------------------------
+
 ```{r}
 
 datatable(companies,
@@ -80,7 +78,6 @@ datatable(companies,
 
 States With the Most Complaints
 =====================================
-To filter, click on the boxes at the top of the columns. To sort, use the up/down arrows by the column names.
 
 Row {data-height=1000}
 -----------------------------------------------------------------------
@@ -102,7 +99,6 @@ datatable(states,
 
 Most Common Issues Complained About
 =====================================
-To filter, click on the boxes at the top of the columns. To sort, use the up/down arrows by the column names.
 
 Row {data-height=1000}
 -----------------------------------------------------------------------
